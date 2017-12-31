@@ -53,6 +53,18 @@ var calculator = (function(){
         }
     }
 
+    function deposit(num){
+            total += num;
+    }
+
+    function withdraw(num){
+        if (num < total){
+            total -= num;
+        }else{
+            throw new Error;
+        }
+    }
+
     return {
         load: load,
         getTotal: getTotal,
@@ -60,5 +72,7 @@ var calculator = (function(){
         subtract: subtract,
         multiply: multiply,
         divide: divide,
+        deposit: deposit,
+        withdraw: withdraw,
     };
 })();
