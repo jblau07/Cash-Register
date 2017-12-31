@@ -1,78 +1,70 @@
 console.log("hello");
 
-var calculator = (function(){
-    
+function calculator(){
+    var memory = 0;
     var total = 0;
 
-    function load(x){
+    return {
+
+    load: (x) => {
         if (typeof x === "number"){
             total = x;
+            return x;
+        }else{
+            throw new Error;
+        }
+    },
+
+    getTotal: () => {
+        return total;
+    },
+
+    add: (x) => {
+        if (typeof x === "number"){
+            total += x 
             return total;
         }else{
             throw new Error;
         }
-    }
+    },
 
-    function getTotal(){
-        return total;
-    }
-
-    function add(x){
-        if (typeof x === "number"){
-            total += x 
-            return total
-        }else{
-            throw new Error;
-        }
-    }
-
-    function subtract(x){
+    subtract: (x) => {
         if (typeof x === "number"){
             total -= x 
             return total;
         }else{
             throw new Error;
         }
-    }
+    },
 
-    function multiply(x){
+    multiply: (x) => {
         if (typeof x === "number"){
             total *= x 
             return total;
         }else{
             throw new Error;
         }
-    }
+    },
 
-    function divide(x){
+    divide: (x) => {
         if (typeof x === "number"){
             total /= x 
             return total;
         }else{
             throw new Error;
         }
-    }
+    },
 
-    function deposit(num){
-            total += num;
-    }
+    recallMemory: () => {
+        return memory;
+    },
 
-    function withdraw(num){
-        if (num < total){
-            total -= num;
-        }else{
-            throw new Error;
-        }
-    }
+    saveMemory: () => {
+        memory = total;
+    },
 
-    return {
-        load: load,
-        getTotal: getTotal,
-        add: add,
-        subtract: subtract,
-        multiply: multiply,
-        divide: divide,
-        deposit: deposit,
-        withdraw: withdraw,
-    };
-})();
+    clearMemory: () => {
+        memory = 0;
+    },
+    }
+}

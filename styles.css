@@ -1,3 +1,10 @@
-body {
-    background-color: blue;
+
+#displaySpace{
+    width: 300px;
+    text-align: right;
+    padding-bottom: 20px;
+    border: solid 2px;
+    font-size: 30px;
+    
+    
 }
