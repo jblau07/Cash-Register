@@ -4,12 +4,13 @@ function calculator(){
     var memory = 0;
     var total = 0;
 
-    return {
+    return{
+    
 
-    load: (x) => {
-        if (typeof x === "number"){
-            total = x;
-            return x;
+    load: (y) => {
+        if (typeof y === "number"){
+            total = y;
+            return y;
         }else{
             throw new Error;
         }
@@ -19,36 +20,36 @@ function calculator(){
         return total;
     },
 
-    add: (x) => {
-        if (typeof x === "number"){
-            total += x 
+    add: (y) => {
+        if (typeof y === "number"){
+            total += y 
             return total;
         }else{
             throw new Error;
         }
     },
 
-    subtract: (x) => {
-        if (typeof x === "number"){
-            total -= x 
+    subtract: (y) => {
+        if (typeof y === "number"){
+            total -= y 
             return total;
         }else{
             throw new Error;
         }
     },
 
-    multiply: (x) => {
-        if (typeof x === "number"){
-            total *= x 
+    multiply: (y) => {
+        if (typeof y === "number"){
+            total *= y
             return total;
         }else{
             throw new Error;
         }
     },
 
-    divide: (x) => {
-        if (typeof x === "number"){
-            total /= x 
+    divide: (y) => {
+        if (typeof y === "number"){
+            total /= y 
             return total;
         }else{
             throw new Error;
@@ -59,8 +60,18 @@ function calculator(){
         return memory;
     },
 
-    saveMemory: () => {
-        memory = total;
+    saveMemory: (y) => {
+        memory += y;
+        return memory;
+    },
+
+    addMemory: (y) => {
+        if (y > memory){
+            throw new Error;
+        }else{
+            memory -= y;
+            return memory;
+        }
     },
 
     clearMemory: () => {
@@ -68,3 +79,11 @@ function calculator(){
     },
     }
 }
+
+
+
+
+
+
+
+
