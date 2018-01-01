@@ -110,6 +110,8 @@ depositButtonClick.addEventListener("click", function(){
 var withdrawButtonClick = document.getElementById("withdraw");
 withdrawButtonClick.addEventListener("click", function(){
     calculatorMod.addMemory(parseFloat(displaySpace.innerHTMl));
+    console.log(calculatorMod.addMemory(parseFloat(5)));
+    
     freshDisplay();
 },true)
     

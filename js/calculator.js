@@ -69,7 +69,7 @@ function calculator(){
         if (y > memory){
             throw new Error;
         }else{
-            memory -= y;
+            memory = memory - y;
             return memory;
         }
     },
